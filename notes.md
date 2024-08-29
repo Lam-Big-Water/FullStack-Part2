@@ -6,3 +6,6 @@
 
 - npm i axios
 ![Alt text](https://fullstackopen.com/static/0e3766361ce9d08f0c4fdd39152cf493/5a190/18e.png)
+
+- REST - 
+    Every resource has a unique address associated with it - its URL.
