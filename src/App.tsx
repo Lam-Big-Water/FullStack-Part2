@@ -1,6 +1,5 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import Note from "./components/Note";
-import axios from "axios";
 import noteService from "./services/notes";
 
 type InitData = { id: number; content: string; important: boolean };
@@ -19,7 +18,6 @@ const App = () => {
   }, []);
 
   const toggleImportanceOf = (id: number) => {
-    const url = `http://localhost:3001/notes/${id}`;
     const note = notes.find((n) => n.id === id);
     const changedNote = { ...note, important: !note?.important };
 
@@ -32,6 +30,7 @@ const App = () => {
         alert(
           `the note '${note?.content}' was already deleted from server`
         )
+        console.log(error)
       setNotes(notes.filter(n => n.id !== id))
     })
   };
